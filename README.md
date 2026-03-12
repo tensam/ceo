@@ -12,17 +12,16 @@ A [Claude Code](https://docs.anthropic.com/en/docs/claude-code) skill that acts 
 
 ## Install
 
-```bash
-claude skills add /path/to/ceo
-```
-
-Or symlink into your skills directory:
+Clone the repo and symlink into your Claude Code skills directory:
 
 ```bash
-ln -s /path/to/ceo ~/.claude/skills/ceo
+git clone https://github.com/tensam/ceo.git
+ln -s "$(pwd)/ceo" ~/.claude/skills/ceo
 ```
 
 ## Usage
+
+In any Claude Code session:
 
 ```
 /ceo
@@ -34,6 +33,19 @@ The skill will guide you through:
 2. Brand positioning and naming
 3. Building a commercialization roadmap
 4. Dispatching to specialized marketing skills as needed
+
+## Works with AgentKit
+
+CEO pairs well with [AgentKit](https://github.com/tensam/agentkit) — CEO handles the **business strategy** (what to build), AgentKit handles the **engineering discipline** (how to build it).
+
+| CEO Output | AgentKit Intake |
+|------------|----------------|
+| Commercialization roadmap action items | → `TASK.md` thin-slice tasks |
+| Brand / pricing / positioning decisions | → `KNOWLEDGE/DECISIONS.md` |
+| Marketing skill dispatch results | → CHECKPOINT state updates |
+| `product-marketing-context.md` | → Layer B project config |
+
+**Typical workflow**: `/ceo` for business assessment → `/agentkit-init` to scaffold the project → develop per roadmap with AgentKit's CHECKPOINT loop keeping state in sync.
 
 ## Files
 

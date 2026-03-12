@@ -264,6 +264,26 @@ On first use, CEO will ask in sequence:
 
 ---
 
+## AgentKit Integration
+
+When the project uses [AgentKit](https://github.com/tensam/agentkit), CEO should leverage its structure:
+
+### Decision Recording
+Write brand, pricing, and strategy decisions to `KNOWLEDGE/DECISIONS.md` so they persist across sessions.
+
+### Roadmap → Tasks
+Convert commercialization roadmap items into AgentKit thin-slice tasks in `TASK.md`, one at a time.
+
+### CHECKPOINT Compliance
+After CEO completes any assessment or dispatch, trigger a CHECKPOINT to update `STATE.md` and `LOG.md`.
+
+### Workflow
+1. `/ceo` — Business assessment and roadmap
+2. `/agentkit-init` — Scaffold project engineering structure
+3. Execute roadmap items using AgentKit's Clarify → Test → Impl → Refactor → WriteMemory → Commit loop
+
+---
+
 ## Related Skills
 
 - **product-marketing-context**: Establish product marketing context (CEO's first step)
